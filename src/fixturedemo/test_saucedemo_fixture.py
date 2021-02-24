@@ -24,6 +24,7 @@ class Test_SauceDemo(BaseTest):
 
         WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "div[class='product_label']")))
 
+    @pytest.mark.skip
     def test_saucedemo1(self):
         driver = self.driver
         print(driver.title)
