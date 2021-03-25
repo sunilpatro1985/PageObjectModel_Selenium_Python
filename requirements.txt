@@ -8,3 +8,5 @@ pytest==6.2.1
 selenium==3.141.0
 toml==0.10.2
 urllib3==1.25.10
+
+openpyxl~=3.0.7

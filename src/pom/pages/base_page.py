@@ -1,3 +1,4 @@
+from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -21,3 +22,13 @@ class BasePage:
 
     def wait_for(self, by_locator):
         self.wait.until(EC.visibility_of_element_located(by_locator))
+
+    def get_count(self, by_locator):
+        return len(self.wait.until(EC.presence_of_all_elements_located(by_locator)))
+
+    def get_element(self, by_locator):
+        return self.wait.until(EC.presence_of_element_located(by_locator))
+
+    def select_by_text(self, by_locator, option):
+        select = Select(self.get_element(by_locator))
+        select.select_by_visible_text(option)

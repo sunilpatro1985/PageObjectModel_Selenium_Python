@@ -21,7 +21,7 @@ def test_Sample1():
 
     # delayEl = driver.find_element_by_id("delay")
     # print(delayEl.text)
-
+    driver.find_element_by_css_selector("[value=''Click me!]").click()
     el = driver.find_element_by_id("two")
     print("First attempt - " + el.text)
 
@@ -36,6 +36,7 @@ def test_Sample1():
     element = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//p[@id='two']")))
     print("First attempt - " + element.text)
     """
+
     time.sleep(3)
     driver.quit()
 
